@@ -4,7 +4,7 @@
 -- ERD for Project 2 ETL
 -- Course: UTOR-VIRT-DATA-PT-06-2023-U-LOLC
 -- Authors: Daiana Spataru, Jasmine Bamba
--- Context: Create ERC for the Crowdfunding Database
+-- Context: Create ERD for the Crowdfunding Database
 
 CREATE TABLE "Contacts" (
     "contact_id" INT   NOT NULL,
@@ -20,15 +20,15 @@ CREATE TABLE "Campaign" (
     "cf_id" INT   NOT NULL,
     "contact_id" INT   NOT NULL,
     "company" VARCHAR(250)   NOT NULL,
-    "blurb" VARCHAR   NOT NULL,
-    "goal" INT   NOT NULL,
-    "pledged" INT   NOT NULL,
+    "description" VARCHAR   NOT NULL,
+    "goal" FLOAT   NOT NULL,
+    "pledged" FLOAT   NOT NULL,
     "outcome" VARCHAR(10)   NOT NULL,
-    "backers" INT   NOT NULL,
+    "backers_count" INT   NOT NULL,
     "country" VARCHAR(2)   NOT NULL,
     "currency" VARCHAR(3)   NOT NULL,
-    "launched_at" FLOAT   NOT NULL,
-    "deadline" FLOAT   NOT NULL,
+    "launched_date" DATE   NOT NULL,
+    "end_date" DATE   NOT NULL,
     "category_id" INT   NOT NULL,
     "subcategory_id" INT   NOT NULL,
     CONSTRAINT "pk_Campaign" PRIMARY KEY (

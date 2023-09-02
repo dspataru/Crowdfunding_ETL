@@ -5,10 +5,10 @@ CREATE TABLE contacts (
 	last_name VARCHAR(50),
 	email VARCHAR(100),
 	PRIMARY KEY (contact_id)
-)
+);
 
 SELECT *
-FROM contacts
+FROM contacts;
 
 -- Creating a table for the different category of each campaign
 CREATE TABLE category (
@@ -35,15 +35,15 @@ CREATE TABLE campaign (
 	cf_id INT NOT NULL,
 	contact_id INT NOT NULL,
 	company VARCHAR(250) NOT NULL,
-	blurb VARCHAR,
-	goal INT NOT NULL,
-	pledged INT NOT NULL,
+	description VARCHAR,
+	goal FLOAT NOT NULL,
+	pledged FLOAT NOT NULL,
 	outcome VARCHAR(10) NOT NULL,
-	backers INT NOT NULL,
+	backers_count INT NOT NULL,
 	country VARCHAR(2),
 	currency VARCHAR(3),
-	launched_at FLOAT,
-	deadline FLOAT,
+	launched_date DATE,
+	end_date DATE,
 	category_id INT NOT NULL,
 	subcategory_id INT NOT NULL,
 	PRIMARY KEY (cf_id),
