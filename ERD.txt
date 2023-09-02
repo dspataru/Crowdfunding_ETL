@@ -24,8 +24,8 @@ outcome string
 backers int
 country string
 currency string
-launched_at date
-deadline date
+launched_at float
+deadline float
 category_id int FK - Category.category_id
 subcategory_id int FK - Subcategory.subcategory_id
 
