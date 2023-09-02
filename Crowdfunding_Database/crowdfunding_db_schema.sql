@@ -16,6 +16,22 @@ CREATE TABLE "Contacts" (
      )
 );
 
+CREATE TABLE "Category" (
+    "category_id" VARCHAR(5)   NOT NULL,
+    "category" VARCHAR(50)   NOT NULL,
+    CONSTRAINT "pk_Category" PRIMARY KEY (
+        "category_id"
+     )
+);
+
+CREATE TABLE "Subcategory" (
+    "subcategory_id" VARCHAR(8)   NOT NULL,
+    "subcategory" VARCHAR(50)   NOT NULL,
+    CONSTRAINT "pk_Subcategory" PRIMARY KEY (
+        "subcategory_id"
+     )
+);
+
 CREATE TABLE "Campaign" (
     "cf_id" INT   NOT NULL,
     "contact_id" INT   NOT NULL,
@@ -29,26 +45,10 @@ CREATE TABLE "Campaign" (
     "currency" VARCHAR(3)   NOT NULL,
     "launched_date" DATE   NOT NULL,
     "end_date" DATE   NOT NULL,
-    "category_id" INT   NOT NULL,
-    "subcategory_id" INT   NOT NULL,
+    "category_id" VARCHAR(5)   NOT NULL,
+    "subcategory_id" VARCHAR(8)   NOT NULL,
     CONSTRAINT "pk_Campaign" PRIMARY KEY (
         "cf_id"
-     )
-);
-
-CREATE TABLE "Subcategory" (
-    "subcategory_id" INT   NOT NULL,
-    "subcategory" VARCHAR(50)   NOT NULL,
-    CONSTRAINT "pk_Subcategory" PRIMARY KEY (
-        "subcategory_id"
-     )
-);
-
-CREATE TABLE "Category" (
-    "category_id" INT   NOT NULL,
-    "category" VARCHAR(50)   NOT NULL,
-    CONSTRAINT "pk_Category" PRIMARY KEY (
-        "category_id"
      )
 );
 

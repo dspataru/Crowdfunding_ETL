@@ -12,7 +12,7 @@ FROM contacts;
 
 -- Creating a table for the different category of each campaign
 CREATE TABLE category (
-	category_id INT NOT NULL,
+	category_id VARCHAR(5) NOT NULL,
 	category VARCHAR(50) NOT NULL,
 	PRIMARY KEY (category_id)
 );
@@ -22,7 +22,7 @@ FROM category;
 
 -- Creating a table for the different subcategory of each campaign
 CREATE TABLE subcategory (
-	subcategory_id INT NOT NULL,
+	subcategory_id VARCHAR(8) NOT NULL,
 	subcategory VARCHAR(50) NOT NULL,
 	PRIMARY KEY (subcategory_id)
 );
@@ -44,8 +44,8 @@ CREATE TABLE campaign (
 	currency VARCHAR(3),
 	launched_date DATE,
 	end_date DATE,
-	category_id INT NOT NULL,
-	subcategory_id INT NOT NULL,
+	category_id VARCHAR(5) NOT NULL,
+	subcategory_id VARCHAR(8) NOT NULL,
 	PRIMARY KEY (cf_id),
 	FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
 	FOREIGN KEY (category_id) REFERENCES category(category_id),

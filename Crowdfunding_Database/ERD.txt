@@ -11,6 +11,15 @@ first_name VARCHAR(50)
 last_name VARCHAR(50)
 email VARCHAR(100)
 
+Category
+----
+category_id PK VARCHAR(5)
+category VARCHAR(50)
+
+Subcategory
+----
+subcategory_id PK VARCHAR(8)
+subcategory VARCHAR(50)
 
 Campaign
 -
@@ -26,17 +35,5 @@ country VARCHAR(2)
 currency VARCHAR(3)
 launched_date DATE
 end_date DATE
-category_id INT FK - Category.category_id
-subcategory_id INT FK - Subcategory.subcategory_id
-
-
-Subcategory
-----
-subcategory_id PK INT
-subcategory VARCHAR(50)
-
-
-Category
-----
-category_id PK INT
-category VARCHAR(50)
+category_id VARCHAR(5) FK - Category.category_id
+subcategory_id VARCHAR(8) FK - Subcategory.subcategory_id
