@@ -12,11 +12,14 @@
 #### Key Words
 SQL, pgAdmin 4, Entity Relationship Diagram (ERD), database, data modelling, data engineering, QuickDBD, Python, regex, Pandas, JSON, DataFrame, 
 
-## Data Modeling: Creating an ERD
+## Create the Category and Subcategory DataFrames
 
 
-## Data Engineering: Creating Table Schemas and Importing the CSV Files
+## Create the Campaign DataFrame
 
 
-## Data Analysis: Querying the Tables
+## Create the Contacts DataFrame
+
+
+## Create the Crowdfunding Database
 
