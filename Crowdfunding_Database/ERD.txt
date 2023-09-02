@@ -1,0 +1,39 @@
+# ERD for Project 2 ETL
+# Course: UTOR-VIRT-DATA-PT-06-2023-U-LOLC
+# Authors: Daiana Spataru, Jasmine Bamba
+# Context: Create ERD for the Crowdfunding Database
+
+
+Contacts
+-
+contact_id PK INT
+first_name VARCHAR(50)
+last_name VARCHAR(50)
+email VARCHAR(100)
+
+Category
+----
+category_id PK VARCHAR(5)
+category VARCHAR(50)
+
+Subcategory
+----
+subcategory_id PK VARCHAR(8)
+subcategory VARCHAR(50)
+
+Campaign
+-
+cf_id PK INT
+contact_id INT FK - Contacts.contact_id
+company VARCHAR(250)
+description VARCHAR
+goal FLOAT
+pledged FLOAT
+outcome VARCHAR(10)
+backers_count INT
+country VARCHAR(2)
+currency VARCHAR(3)
+launched_date DATE
+end_date DATE
+category_id VARCHAR(5) FK - Category.category_id
+subcategory_id VARCHAR(8) FK - Subcategory.subcategory_id
