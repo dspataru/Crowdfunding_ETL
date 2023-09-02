@@ -1,7 +1,7 @@
 # Crowdfunding_ETL
 
 ## Table of Contents
-* [Background]()
+* [Background](https://github.com/dspataru/Crowdfunding_ETL/blob/main/README.md#background)
 * [Create the Category and Subcategory DataFrames](https://github.com/dspataru/Crowdfunding_ETL/blob/main/README.md#create-the-category-and-subcategory-dataframes)
 * [Create the Campaign DataFrame](https://github.com/dspataru/Crowdfunding_ETL/blob/main/README.md#create-the-campaign-dataframe)
 * [Create the Contacts DataFrame](https://github.com/dspataru/Crowdfunding_ETL/blob/main/README.md#create-the-contacts-dataframe)
