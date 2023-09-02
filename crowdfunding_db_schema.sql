@@ -7,46 +7,46 @@
 -- Context: Create ERC for the Crowdfunding Database
 
 CREATE TABLE "Contacts" (
-    "contact_id" int   NOT NULL,
-    "first_name" string   NOT NULL,
-    "last_name" string   NOT NULL,
-    "email" string   NOT NULL,
+    "contact_id" INT   NOT NULL,
+    "first_name" VARCHAR(50)   NOT NULL,
+    "last_name" VARCHAR(50)   NOT NULL,
+    "email" VARCHAR(100)   NOT NULL,
     CONSTRAINT "pk_Contacts" PRIMARY KEY (
         "contact_id"
      )
 );
 
 CREATE TABLE "Campaign" (
-    "cf_id" int   NOT NULL,
-    "contact_id" int   NOT NULL,
-    "company" string   NOT NULL,
-    "blurb" string   NOT NULL,
-    "goal" int   NOT NULL,
-    "pledged" int   NOT NULL,
-    "outcome" string   NOT NULL,
-    "backers" int   NOT NULL,
-    "country" string   NOT NULL,
-    "currency" string   NOT NULL,
-    "launched_at" date   NOT NULL,
-    "deadline" date   NOT NULL,
-    "category_id" int   NOT NULL,
-    "subcategory_id" int   NOT NULL,
+    "cf_id" INT   NOT NULL,
+    "contact_id" INT   NOT NULL,
+    "company" VARCHAR(250)   NOT NULL,
+    "blurb" VARCHAR   NOT NULL,
+    "goal" INT   NOT NULL,
+    "pledged" INT   NOT NULL,
+    "outcome" VARCHAR(10)   NOT NULL,
+    "backers" INT   NOT NULL,
+    "country" VARCHAR(2)   NOT NULL,
+    "currency" VARCHAR(3)   NOT NULL,
+    "launched_at" FLOAT   NOT NULL,
+    "deadline" FLOAT   NOT NULL,
+    "category_id" INT   NOT NULL,
+    "subcategory_id" INT   NOT NULL,
     CONSTRAINT "pk_Campaign" PRIMARY KEY (
         "cf_id"
      )
 );
 
 CREATE TABLE "Subcategory" (
-    "subcategory_id" int   NOT NULL,
-    "subcategory" int   NOT NULL,
+    "subcategory_id" INT   NOT NULL,
+    "subcategory" VARCHAR(50)   NOT NULL,
     CONSTRAINT "pk_Subcategory" PRIMARY KEY (
         "subcategory_id"
      )
 );
 
 CREATE TABLE "Category" (
-    "category_id" int   NOT NULL,
-    "category" int   NOT NULL,
+    "category_id" INT   NOT NULL,
+    "category" VARCHAR(50)   NOT NULL,
     CONSTRAINT "pk_Category" PRIMARY KEY (
         "category_id"
      )
