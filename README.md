@@ -9,11 +9,22 @@
 
 ## Background
 
+This mini project uses an extract, transform, and load (ETL) process to combine data from different sources into a central data warehouse. The ETL process can offer various benefits, including data integration, improved data quality, and automation. ETL can allow the integration of data from multiple sources such as databases, spreadsheets, APIs, etc, into a much more central repository which is useful for analysis. Since the ETL process involves transforming the data, the result is often improved data quality. ETL workflows can also be automated and scaled to handle larger volumes of data. While ETL has many benefits, it also comes with some challenges related to complexity, scalability, latency, and maintenance.
+
+![etl](https://github.com/dspataru/Crowdfunding_ETL/blob/main/images/ETL.png)
+
+The scope of this project includes building an ETL pipeline using Python, Pandas, and both Python dictionary methods and regular expressions to extract and transform the data. A regular expression, or RegEx, is a sequence of characters that specifies something to match in text (e.g. string-searching algorithm). After the data is transformed, it is exported into four separate CSV files which are used to create an entity relationship diagram (ERD) and a table schema. Finally, each CSV file is uploaded into a Postgres database.
+
+For more information on what ETL is exactly, the following websites provide a good explanation: [IBM](https://www.ibm.com/topics/etl), [AWS](https://aws.amazon.com/what-is/etl/), [databricks](https://www.databricks.com/glossary/extract-transform-load)
+
+For more information on what regular expressions in python are, [w3schools](https://www.w3schools.com/python/python_regex.asp) provides a detailed tutorial. 
+
 #### Key Words
-SQL, pgAdmin 4, Entity Relationship Diagram (ERD), database, data modelling, data engineering, QuickDBD, Python, regex, Pandas, JSON, DataFrame, 
+SQL, pgAdmin 4, Entity Relationship Diagram (ERD), database, data modelling, data engineering, QuickDBD, Python, regex, re, Pandas, json, DataFrame, ETL, ETL pipeline
 
 ## Create the Category and Subcategory DataFrames
-In this part, data was successfully extracted and transformed from the "crowdfunding.xlsx" Excel file to create two separate DataFrames: one for categories and one for subcategories.
+
+In this part of the project, data was extracted and transformed from the "crowdfunding.xlsx" Excel file to create two separate DataFrames: one for categories and one for subcategories.
 
 ![Snapshot of Crwodfunding excel sheet](https://github.com/dspataru/Crowdfunding_ETL/assets/135666038/147b3b04-999d-410e-9ef2-357434341d51)
 
