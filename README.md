@@ -108,3 +108,20 @@ Same as before, the 'name' column was split into a 'first_name' and 'last_name' 
 
 ## Create the Crowdfunding Database
 
+This part of the project uses the four csv files that were exported from the first three parts of this project:
+1. [Category](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Resources/category.csv) and [Subcategory](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Resources/subcategory.csv) DataFrames,
+2. [Campaign](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Resources/campaign.csv) DataFrame, and
+3. [Contacts](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Resources/json_contacts.csv) DataFrame.
+
+Each of the csv files were inspected to understand the relationship between the tables, and determine the primary and forgein keys. Using [QuickDBD](https://www.quickdatabasediagrams.com/), an entity-relationship diagram (ERD) was created using code that can be found in [ERD.txt](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Crowdfunding_Database/ERD.txt). Various constraints were specified for each of the columns in each table.
+
+![ERD](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Crowdfunding_Database/images/Project2_ERD_DBDexport.png)
+
+The information in the ERD was used to create a table schema for each csv file. The database schema from [QuickDBD](https://www.quickdatabasediagrams.com/) was saved as a Postgres file named [crowdfunding_db_schema.sql](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Crowdfunding_Database/crowdfunding_db_schema.sql). In order to create the Database, pgAdmin 4 v7 was used. We created a new Postgres database named 'crowdfunding_db' and created the tables in the correct order to handle the forgein keys using the database schema. First we verified that each table was created properly by running a `SELECT` statement for each table ([tables_creation.sql](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Crowdfunding_Database/tables_creation.sql)). Then each csv file was imported into its corresponding SQL table in the same order in which it was created, and verified again by running a `SELECT` statement for each table.
+
+
+
+
+
+
+
