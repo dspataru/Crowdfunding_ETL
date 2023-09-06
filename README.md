@@ -63,7 +63,48 @@ After changing the datatype (type:date):
 Finally, we combined this refined DataFrame with the Category and Subcategory DataFrames and saved the resulting merged DataFrame as Campaign_df.
 
 ## Create the Contacts DataFrame
+In this part of the project, data from a [contacts.xlsx]() file was extracted and transformed into a clean DataFrame with the following columns:
+* A column named "contact_id"  that contains the unique number of the contact person.
+* A column named "first_name" that contains the first name of the contact person.
+* A column named "last_name" that contains the first name of the contact person.
+* A column named "email" that contains the email address of the contact person.
 
+Two options were explored for transforming the data in the [contacts.xlsx]() file: (1) Using Python dictionary methods, and (2) using regular expressions. In both methods, the starting point for importing the data was the same:
+```python
+contact_info_df = pd.read_excel('Resources/contacts.xlsx', header=3)
+contact_info_df.head()
+```
+
+![original form of contacts.xlsx](https://github.com/dspataru/Crowdfunding_ETL/blob/main/images/contact_info_OG.png)
+
+Since the data in the excel file appeared to be in JSON format, the json module was used to convert each row of strings into a Python dictionary using `json.loads`. We were then able to create the DataFrame using the dictionary values which resulted in the following output:
+
+![post json conversion of contacts](https://github.com/dspataru/Crowdfunding_ETL/blob/main/images/contact_info_updated.png)
+
+The datatypes of each column were verified using the `.info()` method:
+```python
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 3 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   contact_id  1000 non-null   int64 
+ 1   name        1000 non-null   object
+ 2   email       1000 non-null   object
+dtypes: int64(1), object(2)
+memory usage: 23.6+ KB
+```
+
+The 'name' column was split into a 'first_name' and 'last_name' columns, the columns were reordered, and the DataFrame was exported as a csv file: [json_contacts.csv](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Resources/json_contacts.csv)
+
+![contact_info_cleaned_before_export](https://github.com/dspataru/Crowdfunding_ETL/blob/main/images/contact_info_cleaned_before_export.png)
+
+For the second option of using regular expressions to transform the data, the following expressions were used:
+1. Extracting the four-digit contact ID number: the regular expression pattern used was `r'"contact_id":\s*(\d+)'` to match the "contact_id" field followed by a colon and any optional whitespace, and then capture one or more digits. The new column 'contact_id' was then converted from object Dtype to int64 Dtype.
+2. Extracting the name of the contact: the regular expression pattern used was `r'"name":\s*"([^"]+)"'` to match the "name" field, which is followed by a colon, optional whitespace, and the name enclosed in double quotes. The `([^"]+)` part captures one or more characters that are not double quotes. This data was also added to a new column.
+3. Extracting the email from the contacts: the regular expression pattern used was `r'"email":\s*"([^"]+)"'` to match the "email" field, followed by a colon, optional whitespace, and the email address enclosed in double quotes. The `([^"]+)` part captures one or more characters that are not double quotes. This data was also added to a new column.
+
+Same as before, the 'name' column was split into a 'first_name' and 'last_name' columns, the columns were reordered, and the DataFrame was exported as a csv file: [regex_contacts.csv](https://github.com/dspataru/Crowdfunding_ETL/blob/main/Resources/regex_contacts.csv)
 
 ## Create the Crowdfunding Database
 
